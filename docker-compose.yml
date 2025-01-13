@@ -5,7 +5,7 @@ services:
     #    build:
     #      context: .
     container_name: bookmark_site_web
-    image: storm/bookmark_site:c52692c
+    image: storm/bookmark_site:8461cea
     command: >
       sh -c "python3 manage.py makemigrations &&
              python3 manage.py migrate &&
