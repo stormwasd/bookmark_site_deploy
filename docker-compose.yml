@@ -9,8 +9,8 @@ services:
     command: >
       sh -c "python3 manage.py makemigrations &&
              python3 manage.py migrate &&
-             python3 manage.py runserver 0.0.0.0:8030" &&
-             python3 manage.py create_default_user
+             python3 manage.py runserver 0.0.0.0:8030&&
+             python3 manage.py create_default_user"
 #    volumes:
 #      - ./settings.py:/app/bookmark_site/settings.py
 #      - ./create_default_user.py:/app/create_default_user.py
