@@ -5,12 +5,14 @@ services:
     #    build:
     #      context: .
     container_name: bookmark_site_web
-    image: storm/bookmark_site:2b542e6
+    image: storm/bookmark_site:c52692c
     command: >
       sh -c "python3 manage.py makemigrations &&
              python3 manage.py migrate &&
-             python3 manage.py runserver 0.0.0.0:8030&&
-             python3 manage.py create_default_user"
+             python3 manage.py makemigrations --empty bookmarks
+             python3 manage.py migrate &&
+             python3 manage.py create_default_user &&
+             python3 manage.py runserver 0.0.0.0:8030"
 #    volumes:
 #      - ./settings.py:/app/bookmark_site/settings.py
 #      - ./create_default_user.py:/app/create_default_user.py
