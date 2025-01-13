@@ -38,11 +38,16 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 5s
+      timeout: 10s
+      retries: 5
     networks:
       - bookmark_site_network
 
-volumes:
-  db_data:
+#volumes:
+#  db_data:
 
 networks:
   bookmark_site_network:
